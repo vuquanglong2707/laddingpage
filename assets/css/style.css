@@ -8,8 +8,13 @@ body {
     overflow-x: hidden;
 }
 
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
 .space-top {
-    padding-top: 50px;
+    padding-top: 80px;
 }
 
 h2 {
@@ -73,16 +78,26 @@ img {
 
 /*------------------------- Start main ---------------*/
 
-.main {
-    margin-top: 30px;
+img {
+    vertical-align: middle;
 }
 
 
-/* Slide promotion */
+/* Position the image container (needed to position the left and right arrows) */
+
+.container {
+    position: relative;
+}
+
+
+/* Hide the images by default */
 
 .mySlides {
     display: none;
 }
+
+
+/* Add a pointer when hovering over the thumbnail images */
 
 .cursor {
     cursor: pointer;
@@ -93,12 +108,11 @@ img {
 
 .prev,
 .next {
-    padding-top: 20vh;
     cursor: pointer;
     width: auto;
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 40px;
     border-radius: 0 3px 3px 0;
     user-select: none;
     -webkit-user-select: none;
@@ -112,9 +126,8 @@ img {
     border-radius: 3px 0 0 3px;
 }
 
-.caption-container {
-    text-align: center;
-    color: rgb(0, 0, 0);
+.row {
+    margin: 0 auto;
 }
 
 .row:after {
@@ -124,10 +137,110 @@ img {
 }
 
 
+/* Six columns side by side */
+
+.column {
+    float: left;
+    width: 16.66%;
+}
+
+
 /* Add a transparency effect for thumnbail images */
 
 .demo {
     opacity: 0.6;
+    height: 200px;
+}
+
+@media (min-width: 1000px) {
+    .demo {
+        opacity: 0.6;
+        height: 160px;
+    }
+    .product-list .product-show .mySlides img {
+        width: 100%;
+        height: 1200px;
+    }
+    .prev,
+    .next {
+        position: absolute;
+        top: 20%;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .demo {
+        opacity: 0.6;
+        height: 70px;
+    }
+    .product-list .product-show .mySlides img {
+        width: 100%;
+        height: 800px;
+    }
+    .prev,
+    .next {
+        position: absolute;
+        top: 400px;
+        font-size: 40px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    .demo {
+        opacity: 0.6;
+        height: 60px;
+    }
+    .product-list .product-show .mySlides img {
+        width: 100%;
+        height: 600px;
+    }
+    .prev,
+    .next {
+        position: absolute;
+        top: 300px;
+        font-size: 35px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .demo {
+        opacity: 0.6;
+        height: 40px;
+    }
+    .product-list .product-show .mySlides img {
+        width: 100%;
+        height: 400px;
+    }
+    .prev,
+    .next {
+        position: absolute;
+        top: 200px;
+        font-size: 25px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .demo {
+        opacity: 0.6;
+        height: 30px;
+    }
+    .product-list .product-show .mySlides img {
+        width: 100%;
+        height: 350px;
+    }
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 180px;
+        font-size: 25px;
+        margin-right: 10px;
+    }
 }
 
 .active,
@@ -139,58 +252,13 @@ img {
     margin: 0 auto;
 }
 
-.product-list .slide-product {
-    display: flex;
-    justify-content: center;
+.product-list .product-show {
+    width: 80%;
+    margin: 0 auto;
 }
 
-.product-list .slide-product .mySlides {
-    width: 35%;
-    height: 350px;
-}
-
-@media only screen and (min-width: 200px) {
-    .product-list .slide-product .mySlides {
-        width: 100%;
-        height: 350px;
-    }
-}
-
-@media only screen and (min-width: 420px) {
-    .product-list .slide-product .mySlides {
-        width: 80%;
-        height: 400px;
-    }
-}
-
-@media only screen and (min-width: 620px) {
-    .product-list .slide-product .mySlides {
-        width: 65%;
-        height: 400px;
-    }
-}
-
-@media only screen and (min-width: 820px) {
-    .product-list .slide-product .mySlides {
-        width: 50%;
-        height: 400px;
-    }
-}
-
-@media only screen and (min-width: 1000px) {
-    .product-list .slide-product .mySlides {
-        width: 40%;
-        height: 400px;
-    }
-}
-
-.product-list .slide-product .mySlides img {
+.product-list .product-show .mySlides {
     width: 100%;
-    height: 100%;
-}
-
-.gallery {
-    justify-content: center;
 }
 
 
@@ -778,7 +846,6 @@ video {
     background-color: tan;
     text-align: center;
     padding-top: 10px;
-    margin-left: 10px;
 }
 
 .info-element .info .shape {
@@ -818,8 +885,8 @@ video {
 
 .form-info .container .wrap {
     border-radius: 5px;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
     margin-top: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -1080,8 +1147,8 @@ ul.social-footer2 li a {
 .card {
     border-radius: 5px;
     background-color: #fff;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-top: 30px;
     padding-top: 30px;
     padding-bottom: 30px

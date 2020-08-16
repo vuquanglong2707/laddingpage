@@ -34,54 +34,25 @@
             </nav>
         </div>
     </header>
-    <div class="main space-top ">
 
-        <h2 style="text-align:center">OPPO RENO 3</h2>
+    <div class="main space-top ">
         <div class="container">
             <div class="product-list">
-                <div class="slide-product">
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <div class="mySlides">
-                        <img src="./assets/img/Reno3.png">
-                    </div>
-                    <div class="mySlides">
-                        <img src="./assets/img/Reno3_black.png">
-                    </div>
-                    <div class="mySlides">
-                        <img src="./assets/img/Reno3_item1.png">
-                    </div>
-                    <div class="mySlides">
-                        <img src="./assets/img/Reno3_item2.png">
-                    </div>
-                    <div class="mySlides">
-                        <img src="./assets/img/Reno3_item3.png">
-                    </div>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
+                <div class="product-show" id="product-show">
                 </div>
-                <div class="row gallery">
-                    <div class="col-xl-2.col-lg-2 col-md-2 .col-sm-2 col-2">
-                        <img class="demo cursor" src="./assets/img/Reno3.png" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-                    </div>
-                    <div class="col-xl-2.col-lg-2 col-md-2 .col-sm-2 col-2">
-                        <img class="demo cursor" src="./assets/img/Reno3_black.png" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-                    </div>
-                    <div class="col-xl-2.col-lg-2 col-md-2 .col-sm-2 col-2">
-                        <img class="demo cursor" src="./assets/img/Reno3_item1.png" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-                    </div>
-                    <div class="col-xl-2.col-lg-2 col-md-2 .col-sm-2 col-2">
-                        <img class="demo cursor" src="./assets/img/Reno3_item2.png" style="width:100%" onclick="currentSlide(4)" alt="The Woods">
-                    </div>
-                    <div class="col-xl-2.col-lg-2 col-md-2 .col-sm-2 col-2">
-                        <img class="demo cursor" src="./assets/img/Reno3_item3.png" style="width:100%" onclick="currentSlide(5)" alt="Cinque Terre">
-                    </div>
-
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+                <br>
+                <div class="row justify-content-center" id="product-showslide">
                 </div>
-                <div class="caption-container">
-                    <h3 id="caption"><a href=""><b>Điện thoại Oppo Reno 3</b> </a> </h3>
-                    <hr style="height: 1px; background-color: black;" />
-                    <p>Mẫu máy mới nhất của oppo Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga suscipit neque deserunt delectus fugiat quos omnis, ullam ipsum saepe dicta accusamus iure.</p>
+                <div class="Name-product" id="Name-product">
                 </div>
-                <p><b>Gía sốc: </b> <span class="line-through">4.500.000đ</span> </p>
+                <p>
+                    <b>Gía gốc: </b>
+                    <span id="prices">
+                    
+                    </span>
+                </p>
                 <br>
                 <div style="text-align: center;">
                     <P class="text-ani">
@@ -92,24 +63,42 @@
                         <span>E</span>
                         <span> &nbsp</span>
                         </span>
-                        <span class="ani2">
-                    <span>3.500.0000 Đ</span>
+                        <span class="ani2" id="price2">
+                            
                         </span>
                     </p>
                     <br>
+                    <form action="">
+                        <div class="form-group row" id="cart-product">
+                            <select class="form-control col-xl-4.col-lg-4 col-md-4 .col-sm-4 col-4" id="color" name="sellist1">
+                                <option >Màu sắc</option>
+                            </select>
+                            <select class="form-control col-xl-4.col-lg-4 col-md-4 .col-sm-4 col-4" id="size" name="sellist1">
+                                <option>Size</option>
+                            </select>
+                            <input class="form-control col-xl-4.col-lg-4 col-md-4 .col-sm-4 col-4 soluong" type="number" id="soluong" placeholder="Số lượng" name="soluong" min="1" max="20">
+                            <input type="text" class="form-control" id="dongia" placeholder="Đơn giá" disabled style="margin: 5px 0;">
+                            <input type="text" class="form-control" id="thanhtien" placeholder="Thành tiền" disabled>
+
+                        </div>
+                    </form>
+                    <br>
+
                     <a href="#section02">
                         <button class="custom-btn btn-11">Mua ngay<div class="dot"></div></button>
                     </a>
                 </div>
                 <br>
                 <br>
+                <div id="captions">
+                </div>
                 <!-- Bs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Đánh giá</a>
+                        <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"><b>Đánh giá</b> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Chi tiết</a>
+                        <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"><b>Chi tiết</b> </a>
                     </li>
                 </ul>
                 <!-- Tab panes -->
@@ -123,9 +112,12 @@
                                             <div class="col-md-4 d-flex flex-column">
                                                 <div class="rating-box">
                                                     <h1 class="pt-4">4.0</h1>
-                                                    <p class="">out of 5</p>
+                                                    <p class="">trên 5</p>
                                                 </div>
-                                                <div> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span>
+                                                <div> <span class="fa fa-star star-active mx-1"></span>
+                                                    <span class="fa fa-star star-active mx-1"></span>
+                                                    <span class="fa fa-star star-active mx-1"></span>
+                                                    <span class="fa fa-star star-active mx-1"></span>
                                                     <span class="fa fa-star star-inactive mx-1"></span>
                                                 </div>
                                             </div>
@@ -183,106 +175,37 @@
                                         </div>
                                     </div>
                                     <div class="card">
-                                        <div class="row d-flex">
-                                            <div class=""> <img class="profile-pic" src="https://i.imgur.com/V3ICjlm.jpg"> </div>
-                                            <div class="d-flex flex-column">
-                                                <h3 class="mt-2 mb-0">Quang Long</h3>
+                                        <div class="row flex">
+                                            <div class="" style="margin:0 auto;"> <img class="profile-pic" src="https://tenhaynhat.com/wp-content/uploads/2019/06/Cha-Eun-Woo-1.jpg"> </div>
+                                            <div class="">
+                                                <h3 class="">Phan Hải</h3>
                                                 <div>
                                                     <p class="text-left"><span class="text-muted">4.0</span> <span class="fa fa-star star-active ml-3"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span>                                                        <span class="fa fa-star star-inactive"></span></p>
                                                 </div>
                                             </div>
-                                            <div class="ml-auto">
-                                                <p class="text-muted pt-5 pt-sm-3">10 Sept</p>
-                                            </div>
                                         </div>
                                         <div class="row text-left">
                                             <h4 class="blue-text mt-3">"Sản phẩm đúng như mẫu"</h4>
-                                            <p class="content">Dưới đây là hình ảnh tôi mở hộp. Cảm ơn shop nhiều.</p>
-                                        </div>
-                                        <div class="row text-left"> <img class="pic" src="https://i.imgur.com/kjcZcfv.jpg"> <img class="pic" src="https://i.imgur.com/SjBwAgs.jpg"> <img class="pic" src="https://i.imgur.com/IgHpsBh.jpg"> </div>
-                                        <div class="row text-left mt-4">
-                                            <div class="like mr-3 vote"> <img src="https://i.imgur.com/mHSQOaX.png"><span class="blue-text pl-2">20</span> </div>
-                                            <div class="unlike vote"> <img src="https://i.imgur.com/bFBO3J7.png"><span class="text-muted pl-2">4</span> </div>
+                                            <p class="content">Cảm ơn shop nhiều. Sẽ ủng hộ shop nhiều hơn nữa!</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="tab-pane " id="tabs-2" role="tabpanel">
-                        <div class="detail ">
-                            <div class="name__detail">
-                                <p>Danh mục:</p>
-                            </div>
-                            <div class="info__detail">
-                                <p>Điện thoại</p>
-                            </div>
-                        </div>
-                        <div class="detail ">
-                            <div class="name__detail">
-                                <p>Thương hiệu:</p>
-                            </div>
-                            <div class="info__detail">
-                                <p>Oppo</p>
-                            </div>
-                        </div>
-                        <div class="detail ">
-                            <div class="name__detail">
-                                <p>Chất liệu:</p>
-                            </div>
-                            <div class="info__detail">
-                                <p>Nhựa</p>
-                            </div>
-                        </div>
-
-                        <div class="detail ">
-                            <div class="name__detail">
-                                <p>Xuất xứ:</p>
-                            </div>
-                            <div class="info__detail">
-                                <p>Trung Quốc</p>
-                            </div>
-                        </div>
-                        <div class="detail ">
-                            <div class="name__detail">
-                                <p>Kho hàng:</p>
-                            </div>
-                            <div class="info__detail">
-                                <p>2566</p>
-                            </div>
-                        </div>
-                        <div class="detail ">
-                            <div class="name__detail">
-                                <p>Gửi từ:</p>
-                            </div>
-                            <div class="info__detail">
-                                <p>Hải Dương</p>
-                            </div>
-                        </div>
-                        <h3>Mô tả sản phẩm</h3>
-                        <p>Abc xyz</p>
                     </div>
                 </div>
             </div>
             <h2>Khuyến mãi còn lại</h2>
+            <div id="count-clock1"></div>
         </div>
     </div>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.8/popper.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
-    <script src='https://cdn.rawgit.com/vuejs/vue/v1.0.24/dist/vue.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js'></script>
-    <script src="./assets/js/script.js"></script>
+
     <div class="moreinfo">
         <div class="container ">
-            <h2>Video mô tả thêm về sản phẩm</h2>
-            <hr style="height: 1px; background-color: black;">
-            <video controls>
-                <source src="./assets/audio/Mở hộp & đánh giá OPPO RENO 3- CHUYÊN GIA SELFIE 44MP.mp4" type="video/mp4">
-                <source src="./assets/audio/Mở hộp & đánh giá OPPO RENO 3- CHUYÊN GIA SELFIE 44MP.mp4" type="video/ogg">
-            </video>
-            <hr>
+            <div id="videoinfo">
+            </div>
             <h2>Ưu điểm nổi bật</h2>
             <hr style="height: 1px; background-color: black;">
             <div class="info-element ">
@@ -291,7 +214,7 @@
                         <i class="far fa-check-circle"></i>
                     </div>
                     <div class="paragraph ">
-                        <p>Điện thoại chính hãng</p>
+                        <p>Cam kết hàng chính hãng</p>
                     </div>
                 </div>
                 <div class="info">
@@ -310,25 +233,9 @@
                         <p>Bảo hành 1 đổi 1 trong vòng 1 tuần</p>
                     </div>
                 </div>
-                <div class="info">
-                    <div class="shape ">
-                        <i class="far fa-check-circle"></i>
-                    </div>
-                    <div class="paragraph ">
-                        <p>Khuyến mãi tới 500k khi mua combo điện thoại</p>
-                    </div>
-                </div>
             </div>
-            <div class="row ">
-                <div class="col-xl-4.col-lg-4 col-md-4 .col-sm-4 col-12 more-img">
-                    <img src="./assets/img/client1.jpg" alt="">
-                </div>
-                <div class="col-xl-4.col-lg-4 col-md-4 .col-sm-4 col-12 more-img">
-                    <img src="./assets/img/client2.png" alt="">
-                </div>
-                <div class="col-xl-4.col-lg-4 col-md-4 .col-sm-4 col-12 more-img">
-                    <img src="./assets/img/client3.png" alt="">
-                </div>
+            <div class="row " id="bonus">
+
             </div>
             <div class="ani-action">
                 <a href="#section02">
@@ -356,54 +263,47 @@
 
     <div class="form-info">
         <div class="container">
-            <div class="wrap">
-                <h2 style="font-size: 1.5em;">Ưu đãi siêu hấp dẫn</h2>
-                <hr style="height: 1px; background-color: black;">
-                <p>Mua điện thoại đôi giảm ngay 500.000đ</p>
-                <p>Tặng ngay tai nghe không dây trị giá 500.000đ</p>
+            <div class="wrap promotion" id="section02">
 
             </div>
-            <div class="wrap" id="section02">
+            <div class="wrap" id="">
                 <h2 style="font-size: 1.5em;">Thông tin cá nhân</h2>
                 <hr style=" height: 1px; background-color: black; ">
-                <form action="/action_page.php " class="was-validated ">
+                <form action=" " class="was-validated ">
                     <div class="form-group ">
-                        <input type="text " class="form-control " id="uname " placeholder="Họ Và tên " name="uname " required>
+                        <input type="text " class="form-control name" id="name " placeholder="Họ Và tên " name="name " required>
                     </div>
                     <div class="form-group ">
-                        <input type="text " class="form-control " id="uname " placeholder="Số điện thoại " name="uname " required>
+                        <input type="text " class="form-control phone-number" id="phone-number " placeholder="Số điện thoại " name="phone-number " required>
                     </div>
                     <div class="form-group ">
-                        <select class="form-control ">
-                            <option value=" ">Tỉnh/Thành phố</option>
-                            <option value=" ">Tứ Kỳ</option>
+                        <select class="form-control tinhthanh" id="tinhthanh">
+                            <option >Tỉnh/Thành phố</option>
                         </select>
                     </div>
                     <div class="form-group ">
-                        <select class="form-control ">
-                            <option value=" ">Quận/huyện</option>
-                            <option value=" ">Tứ Kỳ</option>
+                        <select class="form-control " id="quanhuyen">
+                            <option >Quận/huyện</option>
                         </select>
                     </div>
                     <div class="form-group ">
-                        <select class="form-control ">
-                            <option value=" ">Xã/Phường</option>
-                            <option value=" ">Quang khải</option>
+                        <select class="form-control " id="xaphuong">
+                            <option>Xã/Phường</option>
                         </select>
                     </div>
 
                     <div class="form-group ">
-                        <input type="text " class="form-control " id="uname " placeholder="Địa chỉ " name="uname " required>
+                        <input type="text " class="form-control diachi" id="diachi " placeholder="Địa chỉ " name="diachi " required>
                     </div>
                     <a href="#section02 ">
-                        <button class="custom-btn btn-11 ">Mua ngay<div class="dot "></div></button>
+                        <button class="custom-btn btn-11 submit">Mua ngay<div class="dot "></div></button>
                     </a>
                 </form>
             </div>
         </div>
     </div>
-    <h2 style="font-size: 1.5em;">Thời gian khuyến mãi còn</h2>
-    <script src="./assets/js/script.js "></script>
+    <!-- <h2 style="font-size: 1.5em;">Thời gian khuyến mãi còn</h2>
+    <div id="count-clock2"></div> -->
 
     <!-- Please Subscribe My Youtube Channel
 https://www.youtube.com/channel/UCQM5ye1xR4vJgtga0ryud2Q/
@@ -415,35 +315,31 @@ https://www.youtube.com/channel/UCQM5ye1xR4vJgtga0ryud2Q/
 
                     <div class="col-xs-12 col-sm-6 col-md-3 ">
                         <div class="widget subscribe no-box ">
-                            <h5 class="widget-title ">COMPANY NAME<span></span></h5>
-                            <p>About the company, little discription will goes here.. </p>
+                            <h5 class="widget-title ">Liên hệ<span></span></h5>
+                            <p>Địa chỉ: Tòa nhà CT1A, Khu đô thị thành phố Giao Lưu, Phạm Văn Đồng, Cổ Nhuế 1, Bắc Từ Liêm, Hà Nội </p>
+                            <p>Tel:0813 568 333</p>
+                            <p>Email:admin@vveco.vn</p>
                         </div>
                     </div>
 
                     <div class="col-xs-12 col-sm-6 col-md-3 ">
                         <div class="widget no-box ">
-                            <h5 class="widget-title ">Quick Links<span></span></h5>
+                            <h5 class="widget-title ">LIÊN KẾT NHANH<span></span></h5>
                             <ul class="thumbnail-widget ">
                                 <li>
-                                    <div class="thumb-content "><a href="#. ">Get Started</a></div>
+                                    <div class="thumb-content "><a href="#. ">Trang chủ</a></div>
                                 </li>
                                 <li>
-                                    <div class="thumb-content "><a href="#. ">Top Leaders</a></div>
+                                    <div class="thumb-content "><a href="#. ">Sản phẩm</a></div>
                                 </li>
                                 <li>
-                                    <div class="thumb-content "><a href="#. ">Success Stories</a></div>
+                                    <div class="thumb-content "><a href="#. ">Bài viết</a></div>
                                 </li>
                                 <li>
-                                    <div class="thumb-content "><a href="#. ">Event/Tickets</a></div>
+                                    <div class="thumb-content "><a href="#. ">Điều khoản dịch vụ</a></div>
                                 </li>
                                 <li>
-                                    <div class="thumb-content "><a href="#. ">News</a></div>
-                                </li>
-                                <li>
-                                    <div class="thumb-content "><a href="#. ">Lifestyle</a></div>
-                                </li>
-                                <li>
-                                    <div class="thumb-content "><a href="#. ">About</a></div>
+                                    <div class="thumb-content "><a href="#. ">Chính sách đổi trả</a></div>
                                 </li>
                             </ul>
                         </div>
@@ -451,18 +347,16 @@ https://www.youtube.com/channel/UCQM5ye1xR4vJgtga0ryud2Q/
 
                     <div class="col-xs-12 col-sm-6 col-md-3 ">
                         <div class="widget no-box ">
-                            <h5 class="widget-title ">Get Started<span></span></h5>
-                            <p>Get access to your full Training and Marketing Suite.</p>
-                            <a class="btn " href="#. " target="_blank ">Register Now</a>
+                            <h5 class="widget-title ">TÀI KHOẢN<span></span></h5>
+                            <p>Tài khoản của tôi</p>
+                            <a class="btn " href="#. " target="_blank ">Giỏ hàng</a>
                         </div>
                     </div>
 
                     <div class="col-xs-12 col-sm-6 col-md-3 ">
 
                         <div class="widget no-box ">
-                            <h5 class="widget-title ">Contact Us<span></span></h5>
-
-                            <p><a href="mailto:info@domain.com " title="glorythemes ">info@domain.com</a></p>
+                            <h5 class="widget-title ">ĐĂNG KÝ THEO DÕI THỜI TRANG VVECO !<span></span></h5>
                             <ul class="social-footer2 ">
                                 <li class=" ">
                                     <a title="youtube " target="_blank " href="https://www.youtube.com/ "><i class="fab fa-youtube "></i></a>
@@ -484,7 +378,16 @@ https://www.youtube.com/channel/UCQM5ye1xR4vJgtga0ryud2Q/
             </div>
         </div>
     </footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.8/popper.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
+    <script src='https://cdn.rawgit.com/vuejs/vue/v1.0.24/dist/vue.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js'></script>
+    <script src="./assets/js/script.js "></script>
     <script src="./assets/js/custom.js"></script>
+    <script src="./assets/js/count_aclock.js"></script>
+    <script src="./assets/js/add.js"></script>
+
 </body>
 
 </html>
