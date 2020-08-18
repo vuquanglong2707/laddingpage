@@ -1281,3 +1281,77 @@ td {
     position: relative;
     right: 10px;
 }
+
+
+/*  */
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400i,600");
+@keyframes getBlurry {
+    0% {
+        filter: blur(0px);
+        transform: scale(1);
+    }
+    100% {
+        filter: blur(10px);
+        transform: scale(1.2);
+    }
+}
+
+.chat {
+    position: relative;
+    display: inline-block;
+    width: 40vw;
+    min-width: 400px;
+    max-width: 80%;
+    animation: popFromBottom 0.5s ease-in-out;
+    position: fixed;
+    left: 150px;
+    top: 100px;
+}
+
+@keyframes popFromBottom {
+    0% {
+        transform: translateY(300px) scale(0);
+    }
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+}
+
+.chat .improfile img {
+    height: 22vmin;
+    margin-left: -30%;
+}
+
+.profile {
+    display: inline-block;
+    width: 22vmin;
+    height: 22vmin;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    left: -16vmin;
+    top: -1vmin;
+    border: 1vmin solid #fff;
+}
+
+.message {
+    background: #ffe271;
+    padding: 2vmin 5vmin 2vmin 10vmin;
+    border-radius: 0px 50px 50px 0px;
+    font-size: 3vmin;
+    text-align: left;
+}
+
+.user {
+    text-align: left;
+    padding: 2px 30px 5px 60px;
+    border-radius: 0px 0px 20px;
+    font-size: 3.2vmin;
+    background: #fff;
+    color: #83aebd;
+    display: inline-block;
+    float: left;
+    font-weight: 600;
+    font-style: normal;
+}

@@ -1,64 +1,84 @@
 ﻿var options = [{
-        position: 'bottom-left',
         title: 'Quang Long',
         description: 'Đã mua 1 sản phẩm',
-        closeTimeout: 7000,
-        width: 500
-    }, {
+        image: 'img/success.png',
+        type: 'success',
         position: 'bottom-left',
+        closeTimeout: 7000,
+        width: 300
+    }, {
         title: 'Hoàng Hà',
         description: 'Đã mua 1 sản phẩm',
-        closeTimeout: 7000,
-        width: 500
-    }, {
+        image: 'https://www.bloghong.com/wp-content/uploads/2017/10/y-nghia-icon-facebook-zalo.png',
+        type: 'success',
         position: 'bottom-left',
+        closeTimeout: 7000,
+        width: 300
+    }, {
         title: ' Dặng Thủy',
         description: 'Đã mua 1 sản phẩm',
-        closeTimeout: 7000,
-        width: 500
-    }, {
+        image: 'https://www.bloghong.com/wp-content/uploads/2017/10/y-nghia-icon-facebook-zalo.png',
+        type: 'success',
         position: 'bottom-left',
+        closeTimeout: 7000,
+        width: 300
+    }, {
         title: 'Khánh Huyền ',
-        closeTimeout: 7000,
         description: 'Đã mua 1 sản phẩm',
-        width: 500
-    }, {
+        image: 'https://about.canva.com/wp-content/uploads/sites/3/2016/08/logos-1.png',
+        type: 'success',
         position: 'bottom-left',
-        title: 'Hoàng Thu Hà ',
         closeTimeout: 7000,
+        width: 300
+    }, {
+        title: 'Hoàng Thu Hà ',
         description: 'Đã mua 1 sản phẩm',
-        width: 500
+        image: 'https://about.canva.com/wp-content/uploads/sites/3/2016/08/logos-1.png',
+        type: 'success',
+        position: 'bottom-left',
+        closeTimeout: 7000,
+        width: 300
     },
     {
-        position: 'bottom-left',
         title: 'Phạm Hùng',
         description: 'Đã mua 1 sản phẩm',
-        closeTimeout: 7000,
-        width: 500
-    }, {
+        image: 'https://about.canva.com/wp-content/uploads/sites/3/2016/08/logos-1.png',
+        type: 'success',
         position: 'bottom-left',
+        closeTimeout: 7000,
+        width: 300
+    }, {
         title: 'Văn Nam',
         description: 'Đã mua 1 sản phẩm',
-        closeTimeout: 7000,
-        width: 500
-    }, {
+        image: 'https://about.canva.com/wp-content/uploads/sites/3/2016/08/logos-1.png',
+        type: 'success',
         position: 'bottom-left',
+        closeTimeout: 7000,
+        width: 300
+    }, {
         title: ' Đỗ Hà',
         description: 'Đã mua 1 sản phẩm',
-        closeTimeout: 7000,
-        width: 500
-    }, {
+        image: 'https://about.canva.com/wp-content/uploads/sites/3/2016/08/logos-1.png',
+        type: 'success',
         position: 'bottom-left',
+        closeTimeout: 7000,
+        width: 300
+    }, {
         title: 'Thiện Nguyễn ',
-        closeTimeout: 7000,
         description: 'Đã mua 1 sản phẩm',
-        width: 500
-    }, {
+        image: 'https://about.canva.com/wp-content/uploads/sites/3/2016/08/logos-1.png',
+        type: 'success',
         position: 'bottom-left',
-        title: 'Hoàng Nguyệt ',
         closeTimeout: 7000,
+        width: 300
+    }, {
+        title: 'Hoàng Nguyệt ',
         description: 'Đã mua 1 sản phẩm',
-        width: 500
+        image: 'https://about.canva.com/wp-content/uploads/sites/3/2016/08/logos-1.png',
+        type: 'success',
+        position: 'bottom-left',
+        closeTimeout: 7000,
+        width: 300
     }
 ];
 

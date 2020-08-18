@@ -1,6 +1,6 @@
 /////////////////////Tinh Tien////////////////////////
 $('#soluong').on('change', function() {
-    alert($('#soluong').val())
+
     TinhTien();
 });
 
@@ -22,7 +22,7 @@ function TinhTien() {
 
 $(document).ready(function() {
     $.ajax({
-        url: 'https://pos.vveco.vn/pos/api/product/detail?shop_token=AmlWspRNhvjO7z4iPD0eWekLLUeODOYt&warehouseId=1&productID=2',
+        url: 'http://45.118.145.91:9999/pos/api/product/detail?shop_token=AmlWspRNhvjO7z4iPD0eWekLLUeODOYt&warehouseId=1&productID=2',
         type: 'GET',
         dataType: 'json',
         success: function(data) {
@@ -40,14 +40,40 @@ $(document).ready(function() {
             var Khuyenmai1;
             var Khuyenmai2;
             ////Set đơn giá
-            $('#color' && '#size').on('change', function() {
 
+            for (var i = 0; i < objProduct.categories.length; i++) {
+                // alert(objProduct.categories[i]);
+                $("#categories").append(`
+                    <p>${objProduct.categories[i]}</p>
+                 `);
+            }
+
+            $('#color' && '#size').on('change', function() {
                     for (var k = 0; k < Pri.length; k++) {
                         for (var j = 0; j < Property.length; j++) {
                             for (var i = 0; i < Property.length; i++) {
                                 if (Pri[k].properties[j].key === "Màu" && $('#color').val() === Pri[k].properties[j].val && Pri[k].properties[i].key === "Size" && Pri[k].properties[i].val === $('#size').val()) {
                                     var dongia = Pri[k].price;
                                     $('#dongia').val(dongia);
+                                    $("#ProductId").append(`
+                                        ${objProduct.id}
+                                    `);
+                                    $("#VariantId").append(`
+                                        ${Pri[k].id}
+                                    `);
+                                    $("#Quantity").append(`
+                                        ${Pri[k].quantity}
+                                    `);
+                                    $("#Weight").append(`
+                                        ${Pri[k].weight}
+                                    `);
+                                    $("#Price").append(`
+                                        ${Pri[k].price}
+                                    `);
+                                    $("#Money").append(`
+                                     ${Pri[k].price}
+                                    `);
+                                    //alert(typeof parseInt($('#weight').val()));
                                 }
                             }
                         }
@@ -68,7 +94,7 @@ $(document).ready(function() {
                 for (var j = 0; j < Pri[0].properties.length; j++) {
                     if (Pri[k].properties[j].key === "Size") {
                         $("#size").append(`
-                        <option>${Pri[k].properties[j].val}</option>
+                           <option>${Pri[k].properties[j].val}</option>
                     `);
                     } else if (Pri[k].properties[j].key === "Màu") {
                         $("#color").append(`
@@ -134,65 +160,7 @@ $(document).ready(function() {
                 <span>${Pric}</span>
             `);
             /// thông tin chi tiết sản phẩm
-            $("#tabs-2").append(`		
-                <div class="detail">
-                    <div class="name__detail">
-                        <p>Danh mục:</p>
-                    </div>
-                    <div class="info__detail">
-                        <p>${AllCategoriess}</p>
-                    </div>
-                </div>
-                <div class="detail ">
-                    <div class="name__detail">
-                        <p>Thương hiệu:</p>
-                    </div>
-                    <div class="info__detail">
-                        <p></p>
-                    </div>
-                </div>
-                <div class="detail ">
-                    <div class="name__detail">
-                        <p>Chất liệu:</p>
-                    </div>
-                    <div class="info__detail">
-                        <p></p>
-                    </div>
-                </div>
 
-                <div class="detail ">
-                    <div class="name__detail">
-                        <p>Xuất xứ:</p>
-                    </div>
-                    <div class="info__detail">
-                        <p></p>
-                    </div>
-                </div>
-                <div class="detail ">
-                    <div class="name__detail">
-                        <p>Mã hàng:</p>
-                    </div>
-                    <div class="info__detail">
-                        <p>${objProduct.barcode}</p>
-                    </div>
-                </div>
-                <div class="detail ">
-                    <div class="name__detail">
-                        <p>Gửi từ:</p>
-                    </div>
-                    <div class="info__detail">
-                        <p></p>
-                    </div>
-                </div>
-                <div class="detail ">
-                    <div class="name__detail">
-                        <p>Mô tả sản phẩm:</p>
-                    </div>
-                    <div class="info__detail">
-                        <p></p>
-                    </div>
-                </div>
-            `);
             ////////Thêm mô tả bằng video
             if (videotest != null) {
                 $("#videoinfo").append(`
@@ -210,82 +178,102 @@ $(document).ready(function() {
     });
 
 });
+
 ///////Set up tỉnh thành quận huyện phường xã
 $(document).ready(function() {
     $.ajax({
-        url: 'https://pos.vveco.vn/pos/api/province',
+        url: 'http://45.118.145.91:9999/pos/api/province',
         type: 'GET',
         dataType: 'json',
         success: function(data) {
             var general = data.body;
             for (var i = 0; i < general.length; i++) {
                 $('#tinhthanh').append(`
-                    <option>${general[i].name}</option>
+                    <option  value="${general[i].id}">${general[i].name}</option>
                 `)
             }
-            $('#tinhthanh').on('change', function() {
-                for (var j = 0; j < general.length; j++) {
-                    if ($('#tinhthanh').val() === general[j].name) {
-                        // alert(general[j].id);
-                        var link = "https://pos.vveco.vn/pos/api/district/" + general[j].id;
-                        $.ajax({
-                            url: link,
-                            type: 'GET',
-                            dataType: 'json',
-                            success: function(data) {
-                                var quanhuyens = data.body;
-                                for (var k = 0; k < quanhuyens.length; k++) {
-                                    $('#quanhuyen').append(`
-                                    <option>${quanhuyens[k].name}</option>
-                                `)
-                                }
-                                $('#quanhuyen').on('change', function() {
-                                    for (var h = 0; h < quanhuyens.length; h++) {
-                                        if ($('#quanhuyen').val() === quanhuyens[h].name) {
-                                            var link2 = "https://pos.vveco.vn/pos/api/ward/" + quanhuyens[h].id;
-                                            $.ajax({
-                                                url: link2,
-                                                type: 'GET',
-                                                dataType: 'json',
-                                                success: function(data) {
-                                                    var xaphuong = data.body;
-                                                    for (var n = 0; n < xaphuong.length; n++) {
-                                                        $('#xaphuong').append(`
-                                                            <option>${xaphuong[n].name}</option>
-                                                        `)
-                                                    }
-                                                }
-                                            })
-
-                                        }
-                                    }
-                                })
-                            }
-                        })
-
-                    }
-                }
-            })
         }
 
     })
 
 });
-///////////////////////////////API post thông tin check out
+
+$('#tinhthanh').on('change', function() {
+    // alert(general[j].id);
+    var link = "http://45.118.145.91:9999/pos/api/district/" + $('#tinhthanh').find(":selected").val();
+    $.ajax({
+        url: link,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            $('#quanhuyen').empty();
+            var quanhuyens = data.body;
+            for (var k = 0; k < quanhuyens.length; k++) {
+                for (var f = k; f < quanhuyens.length; k++) {
+                    $('#quanhuyen').append(`
+                        <option value="${quanhuyens[k].id}">${quanhuyens[k].name}</option>
+                    `)
+                }
+            }
+        }
+    })
+});
+$('#color' && '#size' && '#soluong').on('change', function() {
+    console.log('ID PRODUCT:' + $('#ProductId').val());
+});
+$('#quanhuyen').on('change', function() {
+    var link2 = "http://45.118.145.91:9999/pos/api/ward/" + $('#quanhuyen').find(":selected").val();
+    $.ajax({
+        url: link2,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            $('#xaphuong').empty();
+            var xaphuong = data.body;
+            for (var n = 0; n < xaphuong.length; n++) {
+                $('#xaphuong').append(`
+                            <option value="${xaphuong[n].id}">${xaphuong[n].name}</option>
+                `)
+            }
+        }
+    })
+});
+
 $('.submit').on('click', function() {
     var invoice = {
-        "name": $('.name').val(),
-        "mobile": $('.phone-number').val(),
-        "tinhthanh": $('.tinhthanh').val(),
-        "quanhuyen": $('.quanhuyen').val(),
-        "xaphuong": $('.xaphuong').val(),
-        "diachi": $('.diachi').val(),
-        "product": $('.Name-product').val(),
-        "soluong": $('.soluong').val(),
-        "price": $('.dongia').val(),
+        body: {
+            "shopId": 1,
+            "warehouseId": 1,
+            "orderChannel": "LANDINGPAGE",
+            "totalMoney": $('#thanhtien').val(),
+            "paidMoney": "0",
+            "discountPercent": "0",
+            "discountMoney": "0",
+            "cashMoney": $('#thanhtien').val(),
+            "customerName": $('#name').val(),
+            "customerPhone": $('#phone-number').val(),
+            "receiverName": $('#name').val(),
+            "receiverPhone": $('#phone-number').val(),
+            "receiverAddress": $('#diachi').val(),
+            "receiverProvince": $('#tinhthanh').find(":selected").val(),
+            "receiverDistrict": $('#quanhuyen').find(":selected").val(),
+            "receiverWard": $('#xaphuong').find(":selected").val(),
+            "details": [{
+                "productId": $('#ProductId').val(),
+                "variantId": $('#PariantId').val(),
+                "quantity": $('#Quantity').val(),
+                "price": $('#Price').val(),
+                "money": $('#Price').val()
+            }],
+            "weight": 90,
+            "shipPartner": "Giao hàng tiết kiệm",
+            "shipMoney": "30000",
+            "shopShipMoney": "30000",
+            "shipType": "Chuẩn"
+        }
     }
     $.ajax({
-        url: 'http://api.vveco.vn/tmp/invoice/add',
+        url: 'http://45.118.145.91:9999/pos/api/create/order?shop_token=AmlWspRNhvjO7z4iPD0eWekLLUeODOYt',
         type: 'POST',
         contentType: 'application/json',
         dataType: 'json',
@@ -296,7 +284,8 @@ $('.submit').on('click', function() {
             alert("Đăng ký mua hàng thành công!");
         },
         error: function(error) {
-            alert(error);
+
+            console.log(error);
         }
     });
 })
